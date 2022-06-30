@@ -1,44 +1,58 @@
 abstract class Jugador{
+
     protected nombre:String;
     protected apellido:String;
     protected estatura:String;
-    protected edad:String;
+    protected dob:Date; //dob = day of birth = dia de nacimiento.
     protected titular:Boolean;
-    constructor(n:String,a:String,e:String,f:String,t:Boolean){
-    this.nombre=n;
-    this.apellido=a;
-    this.estatura=e;
-    this.edad=f;
-    this.titular=t;
+    protected peso:number;
+
+    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean) {
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.estatura=estatura;
+        this.peso=peso;
+        this.dob=dob;
+        this.titular=titular;   
     }
-    getNombre():String{
-        return this.nombre;
+
+    getNombre(){
+        return this.nombre + " " + this.apellido
     }
-    getApellido():String{
-        return this.nombre;
+    getEdad(){
+        const fechaActal : Date = new Date();
+        return fechaActal.getFullYear() - this.dob.getFullYear()
     }
-    getEstatura():String{
-        return this.nombre;
+    getEstatura(){
+        return this.estatura
     }
-    getFechaNacimiento():String{
-        return this.nombre;
+    getPeso(){
+        return this.peso
     }
-    setNombre(n:String):void{
-        this.nombre=n;
+    esTitular(){
+        if(this.titular==true){
+            return true
+        }
+        else{
+            return false
+        }
     }
-    setApellido(a:String):void{
-        this.apellido=a;
+    puedeJugar(){}
+    setTitular(estado:number){
+        if(estado==1){
+            this.titular=true;
+        }
+        else if(estado==0){
+            this.titular=false;
+        }
     }
-    setEstatura(e:String):void{
-        this.nombre=e;
-    }
-    setFechaNacimiento(f:String):void{
-        this.nombre=f;
-    }
+
     abstract entrenar():void;
-    abstract rematesArco():void;
-    abstract perfilJugador():void;
-    abstract queHacer():void;
+    abstract descansar():void;
+    abstract patearPelota():void;
+    abstract jugarPartido():void;
+    
+
 
 }
 export default Jugador;
