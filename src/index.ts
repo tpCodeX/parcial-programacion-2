@@ -75,21 +75,21 @@ app.get('/equipo_suplente', (req: Request, res: Response) => {
   res.render('pages/equipoSuplente', { supl: supl,entrenador:trainer});
 
 });
-app.get('/singleton', (req: Request, res: Response) => {
-  const singl:SingletonClass=new SingletonClass();
-  res.render('pages/singleton',{singleton:singl});
-});
+ app.get('/singleton', (req: Request, res: Response) => {
+    const singl = SingletonClass.getInstancia()
+    res.render('pages/singleton',{singleton:singl});
+ });
+
+/*app.get('/singleton', (req: Request, res: Response) => {
+    const singl = SingletonClass.getInstancia()
+    res.render('pages/singleton',{singleton:singl});
+ });*/
 
 app.get('/equipo_titular', (req: Request, res: Response) => {
     const tit=titulares
     const trainer=new Entrenador("Lionel","Scaloni",tit);
   res.render('pages/equipoTitular', { titulares: tit , entrenador:trainer });
 });
-
-
-
-
-
 
 app.listen(PORT, () => {
   console.info(`Ejecutando en puerto ${PORT}`);
