@@ -1,6 +1,6 @@
 import Jugador from "./jugador";
-import Entrenador from './entrenador';
 import iObservable from '../interfaces/iObservable';
+import iPosicion from "../interfaces/iPosicion";
 
 class Mediocampista extends Jugador implements iPosicion{
     numCamiseta: number;
@@ -18,7 +18,7 @@ class Mediocampista extends Jugador implements iPosicion{
     }
 
     descansar(): void {
-        console.log("Paro para descansar.")
+         console.info("Paro para descansar.")
     }
 
     getAsistencias():number{
@@ -34,7 +34,7 @@ class Mediocampista extends Jugador implements iPosicion{
     }
 
     getPosicion():string {
-        return "Soy Mediocampista"
+        return "Mediocampista"
     }
 
     getnumCamiseta(): number {

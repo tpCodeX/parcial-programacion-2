@@ -1,5 +1,6 @@
 import Jugador from "./jugador";
 import iObservable from '../interfaces/iObservable';
+import iPosicion from '../interfaces/iPosicion';
 
 class Delantero extends Jugador implements iPosicion{
     numCamiseta: number;
@@ -13,7 +14,7 @@ class Delantero extends Jugador implements iPosicion{
     }
 
     entrenar(): void {
-        console.log("Entreno rematando al arco.")
+        console.info("Entreno rematando al arco.")
     }
 
     descansar(): void {
@@ -21,7 +22,7 @@ class Delantero extends Jugador implements iPosicion{
     }
     
     getPosicion(): string {
-        return "Soy Delantero"
+        return "Delantero"
     }
     
     getnumCamiseta(): number {

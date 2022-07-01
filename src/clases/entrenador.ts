@@ -4,9 +4,10 @@ class Entrenador implements iObservable{
     protected nombre:String;
     protected apellido:String;
     public equipo:iObserver[]=[];
-    constructor(nombre:string,apellido:string){    
+    constructor(nombre:string,apellido:string,equipo:iObserver[]){    
         this.nombre=nombre,
         this.apellido=apellido
+        this.equipo=equipo
     }
     //Los jugadores están pendientes a lo que diga el observable que es el entrenador
     attach(j: iObserver): void {

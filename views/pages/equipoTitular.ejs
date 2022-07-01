@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <title>Equipo suplente</title>
+    <title>Equipo Titular</title>
 </head>
 
 <body>
-    <H1 align="center"> Selección Suplente </H1>
+    <H1 align="center"> Selección Titular </H1>
     <div>
         <table class="table">
             <thead class="table-dark">
@@ -25,31 +25,31 @@
             <tbody>
                 <tr>
                     <td text-align="center"> <ul>
-                            <% supl.forEach(function(suplente){ %>
-                                <li text-align: center style="list-style: none;"><%= suplente.getNombre()%></li>
+                            <% titulares.forEach(function(titular){ %>
+                                <li text-align: center style="list-style: none;"><%= titular.getNombre()%></li>
                             <% }); %>
                             </ul>
                     </td>
                     <td text-align="center"> <ul>
-                        <% supl.forEach(function(suplente){ %>
-                            <li text-align: center style="list-style: none;"><%= suplente.getnumCamiseta()%></li>
+                        <% titulares.forEach(function(titular){ %>
+                            <li text-align: center style="list-style: none;"><%= titular.getnumCamiseta()%></li>
                         <% }); %>
                         </ul>
                     </td>
                     <td text-align="center"> <ul>
-                        <% supl.forEach(function(suplente){ %>
-                            <li text-align: center style="list-style: none;"><%= suplente.getEdad()%></li>
+                        <% titulares.forEach(function(titular){ %>
+                            <li text-align: center style="list-style: none;"><%= titular.getEdad()%></li>
                         <% }); %>
                         </ul></td>
                     <td text-align="center"> <ul>
-                        <% supl.forEach(function(suplente){ %>
-                            <li text-align: center style="list-style: none;"><%= suplente.getPosicion()%></li>
+                        <% titulares.forEach(function(titular){ %>
+                            <li text-align: center style="list-style: none;"><%= titular.getPosicion()%></li>
                         <% }); %>
                         </ul>
                     </td>
                     <td text-align="center"> <ul>
-                        <% supl.forEach(function(suplente){ %>
-                            <li style="list-style: none;"><%= suplente.getEstatura() + " "+"cm"%></li>
+                        <% titulares.forEach(function(titular){ %>
+                            <li style="list-style: none;"><%= titular.getEstatura() + " "+"cm"%></li>
                         <% }); %>
                         </ul>
                     </td>
@@ -59,12 +59,12 @@
 </table>
 </div>
 <%= entrenador.notify() %> 
-<% supl.forEach(suplente => { %>
- <%= suplente.update() %> 
+<% titulares.forEach(titular => { %>
+ <%= titular.update() %> 
 <% }) %>
 <div align="center">
-    <a href="/" align="center">Volver</a>
-    </div>
+<a href="/" align="center">Volver</a>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>

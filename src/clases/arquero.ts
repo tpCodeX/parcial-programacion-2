@@ -1,5 +1,6 @@
 import Jugador from "./jugador";
 import iObservable from '../interfaces/iObservable';
+import iPosicion from '../interfaces/iPosicion';
 
 class Arquero extends Jugador implements iPosicion{
     numCamiseta: number;
@@ -12,11 +13,11 @@ class Arquero extends Jugador implements iPosicion{
         this.rematesAtajados=rematesAtajados
     }
     entrenar(): void {
-        console.log("Empiezo a entrenar atajando remates.")
+        console.info ("Empiezo a entrenar atajando remates.")
     }
     
     descansar(): void {
-        console.log("Paro para descansar.")
+        console.info ("Paro para descansar.")
     }
     
     atajar():number{
@@ -26,7 +27,7 @@ class Arquero extends Jugador implements iPosicion{
         this.rematesAtajados=this.rematesAtajados+this.atajar()
     }    
     getPosicion(): string {
-        return "Soy Arquero"
+        return "Arquero"
     }
     
     getnumCamiseta(): number {

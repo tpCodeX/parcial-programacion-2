@@ -4,3 +4,4 @@ interface iPosicion{
     getPosicion():void,
     getnumCamiseta():void,
 }
+export default iPosicion
