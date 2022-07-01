@@ -1,6 +1,5 @@
 import { iObserver } from '../interfaces/iObserver';
 import iObservable from "../interfaces/iObservable";
-import Entrenador from './entrenador';
 abstract class Jugador implements iObserver{
 
     protected nombre:String;
@@ -8,14 +7,12 @@ abstract class Jugador implements iObserver{
     protected estatura:String;
     protected dob:Date; //dob = day of birth = dia de nacimiento.
     protected titular:Boolean;
-    protected peso:number;
     protected Entrenador:iObservable;
 
-    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,Entrenador:iObservable) {
+    constructor(nombre:String,apellido:String,estatura:String,dob:Date,titular:Boolean,Entrenador:iObservable) {
         this.nombre=nombre;
         this.apellido=apellido;
         this.estatura=estatura;
-        this.peso=peso;
         this.dob=dob;
         this.titular=titular;
         this.Entrenador=Entrenador;
@@ -35,9 +32,7 @@ abstract class Jugador implements iObserver{
     getEstatura(){
         return this.estatura
     }
-    getPeso(){
-        return this.peso
-    }
+    
     esTitular(){
         if(this.titular==true){
             return true

@@ -1,13 +1,12 @@
 import Jugador from "./jugador";
-import Entrenador from './entrenador';
 import iObservable from '../interfaces/iObservable';
 
 class Arquero extends Jugador implements iPosicion{
     numCamiseta: number;
     posicion:string;
     rematesAtajados:number;
-    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,rematesAtajados:number,Entrenador:iObservable){
-        super(nombre,apellido,estatura,peso,dob,titular,Entrenador)
+    constructor(nombre:String,apellido:String,estatura:String,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,rematesAtajados:number,Entrenador:iObservable){
+        super(nombre,apellido,estatura,dob,titular,Entrenador)
         this.numCamiseta=numCamiseta,
         this.posicion=posicion,
         this.rematesAtajados=rematesAtajados

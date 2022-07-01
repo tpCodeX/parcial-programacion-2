@@ -6,8 +6,8 @@ class Mediocampista extends Jugador implements iPosicion{
     numCamiseta: number;
     posicion:string;
     asistenciasRealizadas:number;
-    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,asistenciasRealizadas:number,Entrenador:iObservable){
-        super(nombre,apellido,estatura,peso,dob,titular,Entrenador)
+    constructor(nombre:String,apellido:String,estatura:String,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,asistenciasRealizadas:number,Entrenador:iObservable){
+        super(nombre,apellido,estatura,dob,titular,Entrenador)
         this.numCamiseta=numCamiseta,
         this.posicion=posicion,
         this.asistenciasRealizadas=asistenciasRealizadas
