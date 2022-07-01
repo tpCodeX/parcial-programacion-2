@@ -21,16 +21,8 @@ app.get('/equipo' , (req: Request, res: Response) =>{
   res.render('pages/equipo');
 });
 app.get('/clases/curso', (req: Request, res: Response) => {
-    const j1=new Arquero("Emiliano","Martínez","1.95","29",true);
-    const j2=new Arquero("Franco","Armani","1.89","35",false);
-    const j3=new Defensor("Cristian","Romero","1.85","24",true);
-    const j4=new Defensor("Germán","Pezzella","1.87","31",false);
-    const j5=new Mediocampista("Rodrigo","De Paul","1.80","28",true);
-    const j6=new Mediocampista("Exequiel","Palacios","1.77","23",false);
-    const j7=new Delantero("Lionel","Messi","1.70","35",true);
-    const j8=new Delantero("Paulo","Dybala","1.77","28",false);
-    const equipo:Jugador[] = [j1,j2,j3,j4];
-  res.render('pages/equipo', { equipo:equipo });
+    let a = "asd"
+  res.render('pages/equipo', {  });
 });
 
 

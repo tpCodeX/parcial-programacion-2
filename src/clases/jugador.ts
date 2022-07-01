@@ -37,7 +37,15 @@ abstract class Jugador{
             return false
         }
     }
-    puedeJugar(){}
+    
+    puedeJugar(){
+        if(this.esTitular()==true){
+            return true
+        }
+        else{
+            return false
+        }
+    }
     setTitular(estado:number){
         if(estado==1){
             this.titular=true;

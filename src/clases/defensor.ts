@@ -1,23 +1,52 @@
 import Jugador from "./jugador";
 
-class Defensor extends Jugador{
-
-    constructor(n:String,a:String,e:String,f:String,t:Boolean){
-     super(n,a,e,f,t)
+class Defensor extends Jugador implements iPosicion{
+    numCamiseta: number;
+    posicion:string;
+    private entradasAlRival:number;
+    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,entradasAlRival:number){
+        super(nombre,apellido,estatura,peso,dob,titular)
+        this.numCamiseta=numCamiseta,
+        this.posicion=posicion,
+        this.entradasAlRival=entradasAlRival
     }
-    queHacer(): void {
-        console.log("Mi tarea es frenar la balón");
-     }
-     entrenar(): void {
-        console.log("Mi entrenamiento es marcar al rival");
-     }
-     rematesArco(): void {
-         console.log("Mi funcion es rematar el balón de cabeza");
-     }
-     perfilJugador(): void {
-         console.log(`Mi nombre es ${this.nombre},mi apellido ${this.apellido} y mi edad es ${this.edad}`);
-     }
 
+    getEntradas():number{
+        return this.entradasAlRival
+    }
+    entrarRival():number{
+        return 1
+    }
+    setRematesAtajados(){
+        this.entradasAlRival=this.entradasAlRival+this.entrarRival()
+    } 
+    getPosicion(): string {
+        return "Soy Defensor"
+    }
+    
+    getnumCamiseta(): number {
+        return this.numCamiseta
+    }
 
+    entrenar(): string {
+        return "Empiezo a entrenar la defensa."
+    }
+    
+    patearPelota(): string {
+        return "Hago pases para alejar la pelota de nuestra área."
+    }
+
+    jugarPartido(): string {
+        if(this.esTitular()==true){
+            return "Inicio de defensor porque soy Titular."
+        }
+        else{
+            return "Inicio en el banco de suplentes, porque no soy Titular."
+        }        
+    }
+
+    descansar(): string {
+        return "Paro para descansar."
+    }
 }
 export default Defensor;

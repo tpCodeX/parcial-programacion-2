@@ -3,10 +3,12 @@ import Jugador from "./jugador";
 class Delantero extends Jugador implements iPosicion{
     numCamiseta: number;
     posicion:string;
-    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,posicion:string,numCamiseta:number){
+    golesMarcados:number;
+    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,golesMarcados:number){
         super(nombre,apellido,estatura,peso,dob,titular)
         this.numCamiseta=numCamiseta,
         this.posicion=posicion
+        this.golesMarcados=golesMarcados
     }
 
     getPosicion(): string {
@@ -17,17 +19,34 @@ class Delantero extends Jugador implements iPosicion{
         return this.numCamiseta
     }
 
-    entrenar(): void {
-        
+    entrenar(): string {
+        return "Entreno rematando al arco."
     }
-    
-    jugarPartido(): boolean {
+    meterGol():number{
+        return 1
+    }
+    setRematesAtajados(){
+        this.golesMarcados=this.golesMarcados+this.meterGol()
+    } 
+    getGolesMarcados():number{
+        return this.golesMarcados
+    }   
+
+    patearPelota(): string {
+        return "Remato al arco rival y pateo penales"
+    }
+
+    jugarPartido(): string {
         if(this.esTitular()==true){
-            return true
+            return "Inicio en la delantera porque soy Titular."
         }
         else{
-            return false
+            return "Inicio en el banco de suplentes, porque no soy Titular."
         }        
+    }
+
+    descansar(): string {
+        return "Paro para descansar."
     }
 }
 
