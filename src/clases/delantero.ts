@@ -1,16 +1,25 @@
 import Jugador from "./jugador";
+import iObservable from '../interfaces/iObservable';
 
 class Delantero extends Jugador implements iPosicion{
     numCamiseta: number;
     posicion:string;
     golesMarcados:number;
-    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,golesMarcados:number){
-        super(nombre,apellido,estatura,peso,dob,titular)
+    constructor(nombre:String,apellido:String,estatura:String,peso:number,dob:Date,titular:Boolean,posicion:string,numCamiseta:number,golesMarcados:number,Entrenador:iObservable){
+        super(nombre,apellido,estatura,peso,dob,titular,Entrenador)
         this.numCamiseta=numCamiseta,
         this.posicion=posicion
         this.golesMarcados=golesMarcados
     }
 
+    entrenar(): void {
+        console.log("Entreno rematando al arco.")
+    }
+
+    descansar(): void {
+        console.info("Paro para descansar.")
+    }
+    
     getPosicion(): string {
         return "Soy Delantero"
     }
@@ -19,9 +28,6 @@ class Delantero extends Jugador implements iPosicion{
         return this.numCamiseta
     }
 
-    entrenar(): string {
-        return "Entreno rematando al arco."
-    }
     meterGol():number{
         return 1
     }
@@ -44,45 +50,5 @@ class Delantero extends Jugador implements iPosicion{
             return "Inicio en el banco de suplentes, porque no soy Titular."
         }        
     }
-
-    descansar(): string {
-        return "Paro para descansar."
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*class Delantero extends Jugador{
-    constructor(nombre:String,apellido:String,estatura:String,edad:String,titular:Boolean,numeroCamiseta:number){
-        super(nombre,apellido,estatura,edad,titular,numeroCamiseta)
-       }
-       queHacer(): void {
-           console.log("Mi tarea es marcar goles");
-        }
-        entrenar(): void {
-           console.log("Mi entrenamiento es patear penales");
-        }
-        rematarArco(): void {
-            console.log("Mi funcion es remates al arco de corta distancia");
-        }
-        perfilJugador(): void {
-            console.log(`Mi nombre es ${this.nombre},mi apellido ${this.apellido} y mi edad es ${this.edad}`);
-        }
-
-} */
 export default Delantero;
